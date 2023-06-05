@@ -1,5 +1,3 @@
-# OneOrange-AluraT5
- 
 # Projeto Alura & One Orange - Turma 5
 
 ## Descrição
