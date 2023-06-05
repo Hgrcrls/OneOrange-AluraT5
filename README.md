@@ -2,8 +2,6 @@
  
 # Projeto Alura & One Orange - Turma 5
 
-![Logo do Projeto](https://link_para_o_logo)https://github.com/Hgrcrls/decodificador-novo/blob/330d5fd0ecd575659a87eac88ba663f03ac64279/imagens/logoAlura.png
-
 ## Descrição
 
 Este repositório contém um projeto desenvolvido como parte do curso da Alura em parceria com a One Orange, Turma 5. O objetivo do projeto é aplicar os conhecimentos adquiridos durante o curso, por meio da resolução de exercícios e desafios propostos.
