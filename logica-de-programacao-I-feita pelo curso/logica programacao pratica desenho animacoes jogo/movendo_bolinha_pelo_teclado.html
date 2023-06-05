@@ -1,0 +1,72 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+// Seleciona o elemento canvas e obtém o contexto de desenho 2d
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+
+// Define a cor de fundo do canvas como lightgray e preenche todo o canvas com ela
+pincel.fillStyle = 'lightgray';
+pincel.fillRect(0, 0, 600, 400);
+
+// Define as coordenadas iniciais do círculo
+var x = 20;
+var y = 20;
+
+// Códigos do teclado para cada seta direcional
+var esquerda = 37
+var cima = 38
+var direita = 39
+var baixo = 40
+
+// Define a taxa de movimento do círculo
+var taxa = 10;
+
+// Função que desenha o círculo na tela
+function desenhaCirculo(x, y, raio) {
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.arc(x, y, raio, 0, 2 * Math.PI);
+    pincel.fill();
+}
+
+// Função que limpa a tela
+function limpaTela() {
+    pincel.clearRect(0, 0, 600, 400);
+}
+
+// Função que atualiza a tela, limpando-a e redesenhando o círculo nas novas coordenadas
+function atualizaTela() {
+    limpaTela();
+    desenhaCirculo(x, y, 10);
+}
+
+// Define o intervalo de atualização da tela em 20 milissegundos
+setInterval(atualizaTela, 20);
+
+// Função que lê as entradas do teclado
+function leDoTeclado(evento) {
+    // Se a seta para cima foi pressionada, diminui a coordenada y
+    if(evento.keyCode == cima) {
+        y = y - taxa;
+    }
+    // Se a seta para baixo foi pressionada, aumenta a coordenada y
+    else if (evento.keyCode == baixo) {
+        y = y + taxa;
+    }
+    // Se a seta para a esquerda foi pressionada, diminui a coordenada x
+    else if (evento.keyCode == esquerda) {
+        x = x - taxa;
+    }
+    // Se a seta para a direita foi pressionada, aumenta a coordenada x
+    else if (evento.keyCode == direita) {
+        x = x + taxa;
+    }
+}
+
+// Adiciona um listener para capturar as entradas do teclado
+document.onkeydown = leDoTeclado;
+
+
+</script>

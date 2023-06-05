@@ -1,0 +1,64 @@
+<canvas width ='600' height='400'></canvas>
+
+<script>
+	
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+
+	
+	//Primeiro grafico = 2015
+	pincel.fillStyle= 'blue';
+	pincel.fillRect(0, 0, 50, 50)    //Chrome
+	pincel.fillStroke = 'black';
+	pincel.strokeRect(0, 0, 50, 50);
+
+	pincel.fillStyle= 'green';
+	pincel.fillRect(0, 50, 50, 25)	 //Firefox
+	pincel.fillStroke = 'black';
+	pincel.strokeRect(0, 50, 50, 25);
+
+	pincel.fillStyle= 'yellow';
+	pincel.fillRect(0, 75, 50, 20);	 //Safari
+	pincel.fillStroke = 'black';
+	pincel.strokeRect(0, 75, 50, 20);
+
+
+	pincel.fillStyle= 'red';
+	pincel.fillRect(0, 95, 50, 5)	 //Outros
+	pincel.fillStroke = 'black';
+	pincel.strokeRect(0, 95, 50, 5);
+	
+
+	//Segundo grafico = 2016
+	pincel.fillStyle= 'blue';
+	pincel.fillRect(100, 0, 50, 65)     //Chrome
+
+	pincel.fillStyle= 'green';
+	pincel.fillRect(100, 65, 50, 20)	//Firefox
+
+	pincel.fillStyle= 'yellow';
+	pincel.fillRect(100, 85, 50, 13)	//Safari
+
+	pincel.fillStyle= 'red';
+	pincel.fillRect(100, 98, 50, 2)		//Outros
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

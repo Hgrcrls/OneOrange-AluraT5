@@ -1,0 +1,108 @@
+<!-- Cria um elemento canvas com 600 pixels de largura e 400 pixels de altura -->
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    // Seleciona o elemento canvas criado anteriormente
+    var tela = document.querySelector('canvas');
+    // Define o contexto 2D para desenhar no canvas
+    var pincel = tela.getContext('2d');
+
+    // Define a cor de preenchimento do canvas
+    pincel.fillStyle = 'lightgray';
+    // Preenche o canvas com a cor definida
+    pincel.fillRect(0, 0, 600, 400);
+
+    // Define o raio dos círculos
+    var raio = 10;
+    // Variáveis para armazenar as coordenadas do círculo a ser desenhado
+    var xAleatorio;
+    var yAleatorio;
+
+    // Função que desenha um círculo na posição (x, y) com o raio e cor especificados
+    function desenhaCirculo(x, y, raio, cor) {
+
+        // Define a cor de preenchimento do círculo
+        pincel.fillStyle = cor;
+        // Começa a definir um novo caminho para desenhar o círculo
+        pincel.beginPath();
+        // Desenha um círculo com as coordenadas e raio especificados
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        // Preenche o círculo com a cor especificada
+        pincel.fill();
+
+    }
+
+
+    // Função que limpa o canvas
+    function limpaTela() {
+        // Limpa o canvas definindo o retângulo que cobre todo o canvas com a cor padrão (transparente)
+        pincel.clearRect(0, 0, 600, 400);
+
+    }
+
+
+    // Função que desenha um alvo na posição (x, y)
+    function desenhaAlvo(x,y) {
+
+
+        // Desenha o círculo vermelho externo
+        desenhaCirculo(x, y, raio+20, 'red');
+        // Desenha o círculo branco do meio
+        desenhaCirculo(x, y, raio+10, 'white');
+        // Desenha o círculo vermelho interno
+        desenhaCirculo(x, y, raio, 'red');
+
+    }
+
+
+    // Função que sorteia um número inteiro entre 0 e o valor máximo especificado
+    function sorteiaPosicao(maximo) {
+
+
+        return Math.floor(Math.random() * maximo);
+
+    }
+
+    // Função que atualiza o canvas
+    function atualizaTela() {
+        // Limpa o canvas
+        limpaTela();
+        // Sorteia novas coordenadas para o alvo
+        xAleatorio = sorteiaPosicao(600);
+        yAleatorio = sorteiaPosicao(400);
+        // Desenha o alvo na nova posição
+        desenhaAlvo(xAleatorio, yAleatorio);
+    }
+
+    // Define um intervalo para chamar a função atualizaTela periodicamente
+    setInterval(atualizaTela, 1000);
+
+    // Função que é chamada quando o usuário clica no canvas
+    function dispara(evento) {
+        // Calcula as coordenadas x e y do clique em relação ao canvas
+  
+    var x = evento.pageX - tela.offsetLeft;
+    var y = evento.pageY - tela.offsetTop;
+
+    if((x > xAleatorio - raio)
+    && (x < xAleatorio + raio)
+    && (y > yAleatorio - raio)
+    && (y < yAleatorio + raio)) {
+
+        alert('Acertou!');
+
+    }
+
+
+}
+
+tela.onclick = dispara;
+
+
+
+
+
+
+
+</script>

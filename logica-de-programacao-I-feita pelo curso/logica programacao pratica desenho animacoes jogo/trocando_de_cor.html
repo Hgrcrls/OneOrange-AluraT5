@@ -1,0 +1,51 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+ // Seleciona o elemento canvas do HTML   
+    var tela = document.querySelector('canvas'); 
+ // Obtém o contexto de desenho 2D do canvas   
+    var pincel = tela.getContext('2d');
+ // Define a cor de preenchimento como cinza   
+    pincel.fillStyle = 'grey'; 
+ // Desenha um retângulo preenchido no canvas   
+    pincel.fillRect(0, 0, 600, 400); 
+
+
+// Definir um array de cores
+    var cores = ['blue', 'red','green']
+    var indiceCorAtual = 0; // // Índice da cor atual, começa com 0 (azul)
+
+
+// Função para desenhar um círculo no canvas
+    function desenhaCirculo(evento) {
+        // Obter as coordenadas do cursor em relação ao canvas
+        var x = evento.pageX - tela.offsetLeft; // Calcula a posição horizontal do cursor em relação ao canvas
+        var y = evento.pageY - tela.offsetTop; // Calcula a posição vertical do cursor em relação ao canvas
+       
+        // Define a cor de preenchimento com base no índice da cor atual
+        pincel.fillStyle = cores[indiceCorAtual]; 
+        pincel.beginPath(); // Inicia um novo caminho de desenho
+        pincel.arc(x, y, 10, 0, 2 * 3.14); // Desenha um círculo no canvas
+        pincel.fill(); // Preenche o círculo com a cor atual
+        console.log(x + ',' + y); // Exibe as coordenadas do círculo no console
+    }
+
+
+// Configura a função desenhaCirculo para ser executada quando o canvas for clicado
+    tela.onclick = desenhaCirculo; 
+
+// Função para mudar a cor atual quando o canvas for clicado com o botão direito do mouse
+    function mudaCor() {
+
+        indiceCorAtual++;  // Incrementa o índice da cor atual
+        if (indiceCorAtual >= cores.length) {
+            indiceCorAtual = 0; // Volta para a primeira cor quando o índice excede o número de cores disponíveis
+        }
+        return false; // Retorna falso para evitar exibir o menu de contexto padrão do canvas
+  }
+    
+    
+// Configura a função mudaCor para ser executada quando o canvas for clicado com o botão direito do mouse
+    tela.oncontextmenu = mudaCor;  
+
+</script>

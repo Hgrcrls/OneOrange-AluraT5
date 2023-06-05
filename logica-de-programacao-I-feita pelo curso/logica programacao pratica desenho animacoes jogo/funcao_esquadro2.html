@@ -1,0 +1,68 @@
+<!-- O elemento <canvas> é criado com uma largura de 600 pixels 
+e uma altura de 400 pixels: <canvas width="600" height="400"></canvas>.-->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+/*
+    O contexto de desenho 2D do canvas é obtido através do método getContext('2d') e armazenado na variável pincel.
+    A função desenhaEsquadro() utiliza os métodos do contexto de desenho 2D para desenhar o esquadro e o triângulo isósceles preenchidos.
+*/
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    
+/*
+    A função desenhaEsquadro() é definida com os parâmetros xa, ya, xc, yc e cor, que representam as coordenadas dos vértices do esquadro e a cor do preenchimento.
+    
+    Primeiro, o contexto de desenho é configurado com a cor de preenchimento fornecida: 
+    pincel.fillStyle = cor;.
+
+    Em seguida, o primeiro triângulo que forma o esquadro é desenhado usando o método 
+    beginPath() para iniciar um novo caminho de desenho, moveTo() para mover o pincel para a coordenada do primeiro vértice, e lineTo() para desenhar as linhas para os outros dois vértices. Finalmente, o método fill() é chamado para preencher o triângulo com a cor configurada.
+
+    O segundo triângulo que forma o esquadro é desenhado da mesma maneira que o primeiro, usando
+as coordenadas dos vértices e o método fill() para preenchê-lo com a cor configurada.
+
+*/
+
+    function desenhaEsquadro(xa, ya, xc, yc, cor) {
+    pincel.fillStyle=cor;
+    pincel.beginPath();
+    pincel.moveTo(xa, ya);
+    pincel.lineTo(xa, yc);
+    pincel.lineTo(xc, yc);
+    pincel.fill();
+
+
+/*Depois, a cor de preenchimento é configurada como "branco": pincel.fillStyle = "white";.
+
+Um novo caminho de desenho é iniciado com pincel.beginPath().
+
+O método moveTo() é chamado para mover o pincel para a coordenada do primeiro vértice do triângulo. As coordenadas são calculadas com base nas fórmulas (6 * xa + xc) / 7 e (9 * ya + 5 * yc) / 14.
+
+Em seguida, o método lineTo() é chamado duas vezes para desenhar as linhas do triângulo para os outros dois vértices. As coordenadas são calculadas usando as fórmulas (6 * xa + xc) / 7 e (ya + 6 * yc) / 7, e (5 * xa + 9 * xc) / 14 e (ya + 6 * yc) / 7.
+
+Finalmente, o método fill() é chamado para preencher o triângulo com a cor configurada, ou seja, branco.
+
+*/
+
+    pincel.fillStyle="white";
+    pincel.beginPath();
+    pincel.moveTo((6 * xa + xc) / 7, (9 * ya + 5 * yc) / 14);
+    pincel.lineTo((6 * xa + xc) / 7, (ya + 6 * yc) / 7);
+    pincel.lineTo((5 * xa + 9 * xc) / 14, (ya + 6 * yc) / 7);
+    pincel.fill();
+  }
+
+/*Por fim, a função desenhaEsquadro() é chamada com os argumentos (50, 50, 400, 400, 'black'), o que resultará em um esquadro preto desenhado no canvas.
+*/
+
+  
+  desenhaEsquadro(50, 50, 400, 400, 'black');
+
+
+
+
+</script>
