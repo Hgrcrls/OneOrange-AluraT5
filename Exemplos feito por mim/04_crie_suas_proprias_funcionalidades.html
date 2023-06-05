@@ -1,0 +1,306 @@
+<meta charset="UTF-8">
+
+<script>
+
+    var ano = 2016;
+    var puloLinha = "<br><br><br>";
+
+    document.write("Higor tem " + (ano - 1977) + " anos");
+    document.write(puloLinha);
+    document.write("Dandara tem " + (ano - 1996) + " anos");
+    document.write(puloLinha);
+
+    ano = 2017;
+    document.write("Mamae tem " + (ano - 1976) + " anos");
+   
+
+</script>
+
+
+
+<br><br>
+------------------------------------------------------
+<br><br>
+xxxxx Função xxxxx
+<br><br>
+
+
+<script>
+
+    function pulaLinha() {
+        alert("Vai pular linha");
+        document.write("<br><br>");
+        
+    }
+
+    var ano = 2016;
+   
+    document.write("Higor tem " + (ano - 1977) + " anos");
+    pulaLinha();
+    
+    document.write("Dandara tem " + (ano - 1996) + " anos");
+    pulaLinha();
+
+    ano = 2017;
+    document.write("Mamae tem " + (ano - 1976) + " anos");
+   
+
+</script>
+
+
+<br><br>
+------------------------------------------------------
+<br><br>
+xxxxx Função + pulaLinha xxxxx
+<br><br>
+
+
+<script>
+ function pulaLinha() {
+
+    document.write("<br><br>");
+
+ }
+
+ //ISSO É UM COMETÁRIO!!
+
+ function mostra(frase) {
+   
+    document.write(frase);
+    pulaLinha();
+
+ }
+
+var ano = 2022
+
+mostra("Higor tem " + (ano - 1977) + " anos");
+mostra("Dandara tem " + (ano - 1996) + " anos")
+mostra("Mamae tem " + (ano - 1976) + " anos")
+
+
+</script>
+
+
+<br><br>
+------------------------------------------------------
+<br><br>
+xxxxx A pegadinha que deu errado xxxxx
+<br><br>
+
+
+
+//<meta charset="UTF-8">
+//<script>
+  //  function fazPegadinha() {
+  //      alert("Olá");
+  //      alert("amiga!");
+ //       alert("Tá");
+ //       alert("bastante");
+ //       alert("entediada?");
+ //       alert("Em ficar");
+  //      alert("Clicando em");
+ //       alert("Ok");
+ //       alert("né?");
+ //   }
+
+//fazPegadinha();
+
+//</script>
+
+<br><br>
+------------------------------------------------------
+<br><br>
+xxxxx Será que ele pegou mesmo a vantagem do uso de funções? xxxxx
+<br><br>
+
+
+<meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    var titulo = "Bem-vindo ao meu programa!";
+
+    document.write("<h1>" + titulo + "</h1>");
+
+    pulaLinha();
+    pulaLinha();
+
+    document.write("Vocês não sabem o que tive que aprender para fazer isso!");
+
+    pulaLinha();
+    pulaLinha();
+
+    document.write("Contudo, assistindo os vídeos e estudando ...");
+
+    pulaLinha();
+    pulaLinha();
+
+    document.write("Eu vou mais longe!");
+
+    pulaLinha();
+    pulaLinha();
+</script>
+
+
+<br><br>
+------------------------------------------------------
+<br><br>
+xxxxx  Alerta diferente! xxxxx
+<br><br>
+
+
+//<meta charset="UTF-8">
+//<script>
+  //  function exibeAlerta(mensagem) {
+  //     // alert("***" + mensagem + "***");
+    }
+//
+ //   var idade1 = 10;
+  //  var idade2 = 20;
+  //  var idade3 = 30;
+ //   var totalIdades = idade1 + idade2 + idade3;
+  //  var mediaIdades = totalIdades/3;
+
+   // exibeAlerta("Total de idades é " + totalIdades);
+   // exibeAlerta("A média das idades é " +  mediaIdades);
+//</script>
+
+
+<br><br>
+------------------------------------------------------
+<br><br>
+xxxxx  Alerta diferente! xxxxx
+<br><br>
+
+
+<meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    mostra("<h1>Bem-vindos</h1>");
+    mostra("<p>Este é um simples programa</p>");
+
+</script>
+
+
+ou 
+
+
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function exibeTitulo(titulo) {
+        document.write("<h1>" + titulo + "</h1>");
+        pulaLinha();
+    }
+
+    function exibeParagrafo(paragrafo) {
+        document.write("<p>" + paragrafo + "</p>");
+        pulaLinha();
+    }
+
+    // pede para alguém ler daqui em diante e veja se ele entende o que esta sendo feito
+    exibeTitulo("Bem-vindos");
+    exibeParagrafo("Este é um simples programa");
+</script>
+
+
+<br><br>
+------------------------------------------------------
+<br><br>
+xxxxx  Alerta diferente! xxxxx
+<br><br>
+
+
+
+<meta charset="UTF-8">
+<script>
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+  }
+  var minhaIdade = 18;
+  var idadeIrmao = 15;
+  mostra("Nossa diferença de idade é " + (minhaIdade - idadeIrmao));
+  pulaLinha();
+</script>
+
+
+<br><br>
+------------------------------------------------------
+<br><br>
+xxxxx  O problema das gerações xxxxx
+<br><br>
+
+
+
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+    document.write("<br>");
+  }
+    function mostrar(frase){
+    document.write(frase);
+    pulaLinha();
+    }
+
+
+
+    
+var idadeMediaQuandoTemFilhos = 28;
+var anoAtual = 2023;
+var quantidadeDeGeracoes = ((anoAtual - 1500) / 28)
+
+mostrar(quantidadeDeGeracoes)
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

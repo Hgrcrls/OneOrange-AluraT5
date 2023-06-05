@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+
+
+///
+//var idadePedro = 28;
+//var idadeMarta = 32;
+//var idadeJorge = 60;
+//var idadeBete = 22;
+
+//var totalIdade = idadePedro + idadeMarta + idadeJorge + idadeBete;
+//var mediaIdades = totalIdade/4;
+///mostra(mediaIdades);
+
+///Se quisermos ampliar a utilização do programa, veremos que cada família possui uma quantidade diferente de familiares. Se quisermos tornar o programa genérico, para que funcione com qualquer família, teremos sempre que alterar todas as variáveis, e não queremos esta solução.
+///
+
+    //3
+var totalFamiliares = parseInt(prompt("quantidade de familiares?"));
+
+var numero = 1;
+
+var totalIdades = 0;
+
+while(numero <= totalFamiliares) {
+    
+    var idade = parseInt(prompt("Infome idade do familiar"));
+    totalIdades = totalIdades + idade;
+    numero++;
+
+}
+
+var mediaDasIdades = totalIdades/totalFamiliares;
+mostra("A média das idades dos familiares é" + mediaDasIdades)
+mostra("FIM");
+
+
+</script>
